@@ -1,0 +1,21 @@
+.body {
+    margin: 0;
+    
+  }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('./background.svg');
+}
+
+.login_layer{
+    width: 1200px;
+    height: 400px;
+    background-color: azure;
+    opacity: 0.5;
+    padding: 30px;
+    border-radius: 40px;
+    
+}
