@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./index.css">  
+        <style>
+            @media screen and (max-width: 800px){
+                .container{
+                    display: none;
+                }
+            }@media screen and (min-width: 801px){
+                .m_container{
+                    display: none;
+                }
+            }
+        </style> 
+    </head>
+    <body>
+        <div class="m_container">
+            <h1>모바일 지원 x</h1>
+
+        </div>
+
+        <div class="container" >
+            <div class="login_container">
+                <div class="login_title">
+                    <h1 style="font-size: 40px;">로그인</h1>
+                </div>
+                <br><br>
+                <div class="input_container">
+                    <form action="#" method="#"> <!-- 설정 시 테스트할때 오류생겨서 #처리 -->
+                        <input type="text" placeholder="아이디"  id="userid">
+                        <div class="errorId hidden"><p style="color: red;">계정 없지롱</p></div> <!-- 아이디 비번틀렸을때 -->
+                        <input type="text" placeholder="비밀번호" id="userpw" >
+                        <div class="errorPw hidden"><p style="color: red;">제대로 확인 ㄱ</p></div><!-- 아이디 비번틀렸을때 -->
+                        <hr style="height: 20px; border:none">
+                        <label for="remember-check">
+                            <input type="checkbox" id="remember-check" onclick=is_checked()>아이디 저장하기
+                        </label>
+                      
+                        <button type="submit" id="login"><h3 style="color: white;">로그인</h3></button>
+                    </form>
+
+                    <div class="sign_up">
+                        <div style="padding-right: 10px; border-right: 2px solid black;"><a href="./index.html"><p style="color: black;">회원가입</p></a></div>
+                        <div style="padding-left: 10px;"><a href="./index.html"><p style="color: black;">아이디/비밀번호찾기</p></a></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    <script>
+        const id = document.getElementById('userid')
+        const password = document.getElementById('userpw')
+        const login = document.getElementById('login')
+        const showErrorId = document.querySelector(".errorId")
+        const showErrorPw = document.querySelector(".errorPw")
+        let save = false;
+        function is_checked() {
+            const checkbox = document.getElementById('remember-check');
+            const is_checked = checkbox.checked;
+            save= is_checked;
+        }
+        
+        var errStack=0
+        
+
+        login.addEventListener('click', () => {
+            
+            if (id.value == 'jimin') {
+                if (password.value == '5534') {
+                    alert('로그인 되었습니다!')
+                    
+                    showErrorId.classList.add("hidden")
+                    showErrorPw.classList.add("hidden")
+                }
+                else {
+                    alert('아이디와 비밀번호를 다시 한 번 확인해주세요!')
+                    showErrorId.classList.add("hidden")
+                    password.value = ""
+                    errStack ++;
+                    
+                    if(showErrorPw.classList.contains("hidden")){
+                        showErrorPw.classList.remove("hidden")
+                    }
+                }
+            }
+            else {
+                alert('존재하지 않는 아이디입니다.')
+                if (!save){
+                    id.value="";
+                    password.value = "";}
+                else {
+                    password.value = ""
+                }
+            
+                if(showErrorPw.classList.contains("hidden")){
+                   showErrorPw.classList.remove("hidden")
+                }
+                
+                if(showErrorId.classList.contains("hidden")){
+                    showErrorId.classList.remove("hidden")
+                }
+                
+            }
+
+            if (errStack >= 5) {
+                alert('비밀번호를 5회 이상 틀리셨습니다. 비밀번호 찾기를 권장드립니다.')
+            }
+        })
+    </script>
+</html>
