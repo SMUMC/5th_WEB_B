@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css" />
+        <!-- Modal: 자식 window에서 부모 window로 돌아가기 전에 사용자의 상호작용을 요구하는 창.
+            ** Modal과 Popup창은 다른 것임.
+                Popup: 현재 화면에 다른 화면을 하나의 browser로 보여주는 기능 -->
+        
+        <title> 모달 만들기 </title>
+    </head>
+
+        <body>
+        <h1>안녕하세요!</h1>
+        <h3>내용내용내용</h3>
+        <button class="popupBtn">버튼 열기</button>
+        <!-- id와 class의 차이
+        - id: 한 페이지에 하나의 정의어로 전체문서에서 한 번만 사용하는 것을 권장함. ('#ID명'으로 선언함.)
+        - class: 한 페이지에 반복적으로 사용되는 스타일을 정의할 수 있음. ('.Class명'으로 선언함.)-->
+
+        <div class="modal">
+            <div class="modalbody">
+                <h1>안녕하세요</h1>
+                <h3>모달 내용은 어쩌고 저쩌고...</h3>
+                <button class="closeBtn">닫기</button>
+            </div>  
+        </div>            
+
+        <script>
+            /* display 속성
+            - none: 보이지 않음.
+            - block: 블록 박스
+            - inline: 인라인 박스
+            - inline-block: block과 inline의 중간 형태 */
+            
+            //querySelector: document내의 요소를 찾아 첫 번째 요소만 리턴해주는 방법
+            function modalOpen(){
+                document.querySelector('.modal').style.display = 'block';
+                document.querySelector('.modalbody').style.display = 'block';
+            }
+
+            function modalClose(){
+                document.querySelector('.modal').style.display = 'none';
+                document.querySelector('.modalbody').style.display = 'none';
+            }
+
+            document.querySelector('.popupBtn').addEventListener('click',modalOpen);
+            document.querySelector('.closeBtn').addEventListener('click',modalClose);
+        </script>
+        
+        </body>
+    
+</html>

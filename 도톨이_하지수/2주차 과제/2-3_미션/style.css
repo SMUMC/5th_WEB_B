@@ -1,0 +1,64 @@
+.body {
+    background-image: url("image.svg"); 
+    background-size: cover; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 0; 
+    border-radius: 20px; 
+}
+
+.container {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 1300px;
+    height: 1200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 20px;
+}
+
+.inputbox{ /*input box*/
+    width: 500px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white; 
+    border-radius: 20px; 
+}   
+
+.submitbox {/* 가입하기 */
+    width: 480px;
+    height: 80px;
+    background-color: rgb(148, 148, 148);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 38px;
+    color: white; 
+    border: none;
+    margin-top: 50px;
+}  
+
+.h1{
+    color: black;
+    font-size: 43px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.h1:after {
+    content: "";
+    display: block;
+    width: 800px;
+    border-bottom: 3px solid white;
+}
+
+.h3{
+    color: white;
+    font-size: 25px;
+    line-height: 1px;
+}
+
+
+
