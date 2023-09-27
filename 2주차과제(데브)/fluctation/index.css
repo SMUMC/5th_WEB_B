@@ -1,0 +1,24 @@
+*{
+    margin: 0; padding: 0;color: white;
+}
+/*배경 디폴트*/
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../signup/img/image.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sub{
+    display: flex;
+}
+button{
+    padding: 20px;
+    color: black;
+    font-size: 24px;
+}

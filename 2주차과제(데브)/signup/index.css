@@ -21,8 +21,8 @@
     justify-content: start;
     padding-top: 3%;
     align-items: center;
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 70%;
     background-color: rgba(255, 255, 255, 0.7);
 }
 .login_title{
@@ -37,33 +37,36 @@
 
 /*로그인 폼*/
 .input_container{
-     width: 30%;
-     height: 60%;
+     width: 40%;
+     height: 80%;
      display: flex;
      flex-direction: column;
      align-items: center;
 }
-input::placeholder {
-    color: white
-  }
+label{
+    color: white;
+    font-size: 12px;
+    width: 100%;
+}
 form{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     width: 100%;
     height: 100%;
 }
-#userid,#userpw {
+#userid,#usernick,#useremail,#userpw,#userpw_re {
     outline: none;
     width: 100%;
     border: none;
     background-color: transparent;
-    border-bottom: 2px solid white;
-    padding:10px;
+    border: 2px solid rgb(255, 255, 255,0.5);;
+    border-radius: 5px;
+    padding:0px;
 }
-#login {
+#signup {
     display: inline-block;
-    width: 80%;
+    width: 100%;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.7);
     font-size: 18px;
@@ -85,4 +88,10 @@ form{
 a{
     text-decoration: none;
     font-weight: bolder;
+}
+p{
+    font-size: 12px;
+}
+br{
+    height: 5px;
 }
