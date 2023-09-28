@@ -17,6 +17,7 @@ const showAcceptEmail = document.querySelector(".acceptEmail")
 const showAcceptPw = document.querySelector(".acceptPw")
 const showAcceptPw_re = document.querySelector(".acceptPw_re")
 sign_up.disabled = true
+
 let isError = {
     id:false,
     email:false,
@@ -29,7 +30,7 @@ let emvalid = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 
 
 id.onkeyup = function () {
-    if (id.value==="") {
+    if (id.value===""||!id.value.trim()) {
         isError.id=false
         showAcceptId.classList.add('hidden')
         showErrorId.classList.remove('hidden')
@@ -41,7 +42,7 @@ id.onkeyup = function () {
     }
   }
   nickname.onkeyup = function () {
-    if (nickname.value.length<2||nickname.value.length>5) {
+    if (nickname.value.length<2||nickname.value.length>5||!nickname.value.trim()) {
         isError.nickname=false
         
         showAcceptNick.classList.add('hidden')
@@ -54,7 +55,7 @@ id.onkeyup = function () {
     }
   }
   email.onkeyup = function () {
-    if (!emvalid.test(email.value)) {
+    if (!emvalid.test(email.value)||!email.value.trim()) {
         isError.email=false
         showAcceptEmail.classList.add('hidden')
         showErrorEmail.classList.remove('hidden')
@@ -66,7 +67,7 @@ id.onkeyup = function () {
     }
   }
   password.onkeyup = function () {
-    if (!pwvalid.test(password.value)) {
+    if (!pwvalid.test(password.value)||!password.value.trim()) {
         isError.password=false
         showAcceptPw.classList.add('hidden')
         showErrorPw.classList.remove('hidden')
@@ -78,7 +79,7 @@ id.onkeyup = function () {
     }
   }
   pw_re.onkeyup = function () {
-    if (password.value != pw_re.value) {
+    if ((password.value != pw_re.value)||!pw_re.value.trim()) {
         isError.pw_re=false
         showAcceptPw_re.classList.add('hidden')
         showErrorPw_re.classList.remove('hidden')
@@ -95,10 +96,14 @@ id.onkeyup = function () {
     if(isError.id &&isError.nickname &&isError.email 
         &&isError.password &&isError.pw_re){
      sign_up.disabled= false
+     sign_up.style.backgroundColor="black";
     }
-    else{
+    else
+    {
         sign_up.disabled=true
+        sign_up.style.backgroundColor="gray";
     }
+    
   }
   id.addEventListener('keyup',button_check)
   nickname.addEventListener('keyup',button_check)
