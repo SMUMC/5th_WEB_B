@@ -4,28 +4,55 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css"/>
     <script src="javascript.js"></script>
-    <title> Chapter2</title>
+    <title>Chapter2</title>
 </head>
 <body class="body">
-  <div class = "container">
-      <div class="h1"> 
-         <h1>회원 가입</h1>
-      </div>
-      <hr style="width: 30px;">
-      <div class="h3">
-         <h3>이름</h3>
-         <input class ="inputbox" type = "text" >
-         <h3>닉네임</h3>
-         <input class ="inputbox" type = "text">
-         <h3>이메일</h3>
-         <input class ="inputbox" type = "email">
-         <h3>비밀번호</h3>
-         <input class ="inputbox" type = "password">
-         <h3>비밀번호 확인</h3>
-         <input class ="inputbox" type = "password">
-         <br>
-         <input class ="submitbox" type="submit" value="가입하기">
-      </div>
+  <div class="container">
+    <div> 
+      <h1></h1>
+    </div>
+    <br>
+    <form>
+      <label htmlFor="name">이름</label>
+      <input class="inputbox" type="text" id="name" onblur="nameFunction()">
+      <div id="nameError" class="error"></div>
+      <br>
+
+      <label htmlFor="nickname"> 닉네임 </label>
+      <input class="inputbox" type="text" id="nickname" onblur="nicknameFunction()">
+      <div id="nicknameError" class="error"></div>
+      <br>
+
+      <label htmlFor="emailadress"> 이메일 </label>
+      <input class="inputbox" type="email" id="emailadress" onblur="emailadressFunction()">
+      <div id="emailadressError" class="error"></div>
+      <br>
+
+      <label htmlFor="password">비밀번호</label>
+      <input class="inputbox" type="password" id="password" onblur="pwFunction()">
+      <div id="passwordError" class="error"></div>
+      <br>
+
+      <label htmlFor="passwordcheck">비밀번호 확인</label>
+      <input class="inputbox" type="password" id="passwordcheck" onblur="pwcheckFunction()">
+      <div id="passwordcheckError" class="error"></div>
+      <br>
+
+      <input class="submitbox" type="button" id="submitbox" value="가입하기" disabled onclick="validateAndSubmit()">
+    </form>
   </div>
+
+  <div class="modal">
+    <div class="modalbody">
+      <h2>가입 성공!</h2>
+      <h2>umc챌린저의 가입을 축하합니다.</h2>
+      <button class="closeBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.closeBtn').addEventListener('click',modalClose);
+  </script>
 </body> 
+
 </html>
