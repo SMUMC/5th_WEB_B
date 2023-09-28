@@ -12,8 +12,8 @@
 .container {
     display: flex;
     background-color: rgba(255, 255, 255, 0.7);
-    width: 1300px;
-    height: 1200px;
+    width: 1000px;
+    height: 800px;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
@@ -25,40 +25,48 @@ label{
     display: block;
     text-align: left;
     color: white;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: lighter;
     margin: 10px;
 }
 
 .inputbox{ 
-    width: 500px;
-    height: 70px;
+    width: 330px;
+    height: 45px;
     background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid white; 
-    border-radius: 20px; 
+    border-radius: 10px; 
     font-size: 20px;
 }   
 
 .submitbox{
-    width: 480px;
-    height: 80px;
-    background-color: black;
-    border-radius: 20px;
+    width: 330px;
+    height: 45px;
+    background-color: gray;
+    border-radius: 10px;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     color: white; 
     border: none;
     margin: 15px;
 }  
 
-.submitbox:disabled{
-    background-color: gray;
-}
+.submitbox_success{
+    width: 330px;
+    height: 45px;
+    background-color: black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: w0px;
+    color: white; 
+    border: none;
+    margin: 15px;
+}  
 
 h1:after {
     content: "회원가입";
     display: block;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bolder;
     width: 800px;
     border-bottom: 3px solid white;
@@ -73,13 +81,13 @@ h3{
 
 .error{
     color:red;
-    font-size: 20px;
+    font-size: 13px;
     text-align: left;
 }
 
 .success{
     color: green;
-    font-size: 20px;
+    font-size: 13px;
     text-align: left;
 }
 
