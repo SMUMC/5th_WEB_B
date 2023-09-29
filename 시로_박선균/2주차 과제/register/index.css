@@ -38,7 +38,10 @@ label{
     border-radius: 5px;
     width: 200px;
     height: 50px;
+    background-color: gray;
     color: white;
+    font-weight: 100;
+    font-size: medium;
 }
 #header{
     font-size: 70px;
@@ -46,9 +49,11 @@ label{
 }
 input{
     outline: none;
-    height: 40px;
+    height: 45px;
     width: 300px;
     border-radius: 15px;
+    border-color: rgba(255, 255, 255);
+    background-color: transparent;
 }
 .register_btn_container{
     display: grid;
@@ -68,7 +73,6 @@ input{
 
 .modal {
     display: none;
-    
     width: 500px;
     height: 200px;
     border-radius: 10px;
