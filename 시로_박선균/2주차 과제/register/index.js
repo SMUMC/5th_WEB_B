@@ -6,9 +6,12 @@ let useremail = document.querySelector("input#useremail");
 let checkpassword = document.querySelector("input#checkpassword");
 let close_btn = document.querySelector("#close");
 let modal_container = document.querySelector(".modal_container");
-
+let form = document.getElementsByTagName("form");
+let passwordReg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/
 let regex = new RegExp("^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$");
-let checkPasswordRegex = new RegExp("/[^a-zA-Z0-9!@#$%^&*()_+{}[\]:;<>,.?~\\-]/")
+
+let checkPasswordRegex = new RegExp(passwordReg)
+
 function check_name(){ 
     let name_field = document.querySelector("#name_field");
     if(username.value != ""){
@@ -56,7 +59,7 @@ function check_password() {
     let password_field = document.querySelector("#password_field");
     
     if(password_field.value != ""){
-        if (checkPasswordRegex.test(userpw.value)) {
+        if (!checkPasswordRegex.test(userpw.value)) {
             password_field.innerHTML = "영어+숫자+특수문자를 조합하여 작성해주세요!"
             password_field.style.color = "red"
             return false;
@@ -118,14 +121,6 @@ function check_input(){
     if(username.value !="" && userpw.value != "" && usernickname.value != "" && useremail.value != "" && checkpassword.value != ""){
         register_btn.removeAttribute("disabled");
         register_btn.style.backgroundColor= "gray";
-    }
-    else{
-
-    }
-}
-function enterkey() {
-    if (window.event.keyCode == 13) {
-        register_btn.click();
     }
 }
 register_btn.addEventListener("click", () => {
