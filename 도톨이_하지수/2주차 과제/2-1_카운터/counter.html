@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Counter 만들기 </title>
+    </head>
+        <body>
+        <h2 id="number"></h2>
+
+        <button id="increase">+1</button>
+        <button id="decrease">-1</button>
+
+         <script>
+            //변수 선언
+            let x = 0;
+            let result1 = 0
+            let result2 = 0
+            const numberBtn = document.getElementById('number')
+            const plusBtn = document.getElementById('increase')
+            const minusBtn = document.getElementById('decrease')
+            console.log(numberBtn)
+            console.log(plusBtn)
+            console.log(minusBtn)
+
+            //getElementById: id를 이용하여 특정한 값을 가진 요소를 가져옴.
+            //innerHTML: id의 내용을 innerHTML의 내용으로 변경함.
+            document.getElementById("number").innerHTML = x;
+
+            //addEventListener: 'click'과 같은 특정이벤트가 발생했을 때 plus와 같은 특정함수를 실행함.
+            document.getElementById("increase").addEventListener('click',() => {
+                console.log('increase가 클릭됨')
+                plus()
+            });
+            document.getElementById("decrease").addEventListener('click',() => {
+                console.log('decrease가 클릭됨')
+                minus()
+            });
+
+            function plus() {
+                result1 = ++x;
+                document.getElementById("number").innerHTML = result1;
+                console.log(result1)
+            }
+
+            function minus() {
+                result2 = --x;
+                document.getElementById("number").innerHTML = result2;
+                console.log(result2)
+            }
+            console.log(x)
+            
+         </script>
+         
+        </body>
+    
+</html>
