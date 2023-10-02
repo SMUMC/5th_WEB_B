@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="register_container">
+            <p id="header">회원 가입</p>
+            <hr style="color: black;">
+            <form action="" method="post">
+                <div class="register_items"> 
+                    <label for="username">이름</label>
+                    <input type="text" id="username">
+                    <p id="name_field"></p>
+                </div>
+                <div class="register_items">
+                    <label for="usernickname">닉네임</label>
+                    <input type="text" id="usernickname">
+                    <p id="nickname_field"></p>
+                </div>
+                <div class="register_items">
+                    <label for="useremail">이메일</label>
+                    <input type="email" id="useremail">
+                    <p id="email_field"></p>
+                </div>
+                <div class="register_items">
+                    <label for="userpw">비밀번호</label>
+                    <input type="password" id="userpw">
+                    <p id="password_field"></p>
+                </div>
+                <div class="register_items">
+                    <label for="checkpassword">비밀번호 확인</label>
+                    <input type="password" id="checkpassword">
+                    <p id="checkpassword_field"></p>
+                </div>
+                <div class="register_btn_container">
+                    <button type="button" id="register_btn" disabled style="background-color: gainsboro;">가입하기</button>
+                </div>
+            </form>
+        </div>
+    <div class="modal_container">
+        <div class="modal">
+            <h1>가입성공!</h1>
+            <h4>UMC 챌린저 가입을 축하합니다!</h4>
+            <div class="modal_footer">
+                <button id="close">닫기</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
