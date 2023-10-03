@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./index.css">  
+        
+    </head>
+    <body>
+        
+        <div class="container" >
+            <div class="login_container">
+                <div class="login_title">
+                    <h1 style="font-size: 40px;">회원가입</h1>
+                </div>
+                <br>
+                <div class="input_container">
+                    <form action="#" method="#"> <!-- 설정 시 테스트할때 오류생겨서 #처리 -->
+                        <label htmlfor="userid"><h3>이름</h3>
+                        <input type="text"  id="userid"></label>
+                        <div class="errorId hidden"><p style="color: red;">필수 입력 항목입니다!</p></div>
+                        <div class="acceptId hidden"><p style="color: green;">멋진 이름이네요!</p></div>
+                        <br>
+                        <label htmlfor="usernick"><h3>닉네임</h3>
+                        <input type="text" id="usernick" ></label>
+                        <div class="errorNick hidden"><p style="color: red;">닉네임을 2~5자로 정해주세요!</p></div>
+                        <div class="acceptNick hidden"><p style="color: green;">멋진 닉네임이네요!</p></div>
+                        <br>
+                        <label htmlfor="useremail"><h3>이메일</h3>
+                        <input type="text" id="useremail" ></label>
+                        <div class="errorEmail hidden"><p style="color: red;">올바른 메일 형식이 아닙니다!</p></div>
+                        <div class="acceptEmail hidden"><p style="color: green;">올바른 메일형식입니다.</p></div>
+                        <br>
+                        <label htmlfor="userpw"><h3>비밀번호</h3>
+                        <input type="text" id="userpw" ></label>
+                        <div class="errorPw hidden"><p style="color: red;">영어+문자+특수문자를 조합하여 작성해주세요!</p></div>
+                        <div class="acceptPw hidden"><p style="color: green;">안전한 비밀번호입니다.</p></div>
+                        <br>
+                        <label htmlfor="userpw_re"><h3>비밀번호확인</h3>
+                        <input type="text" id="userpw_re" ></label>
+                        <div class="errorPw_re hidden"><p style="color: red;">비밀번호가 일치하지않습니다!</p></div>
+                        <div class="acceptPw_re hidden"><p style="color: green;">비밀번호가 일치합니다.</p></div>
+                        <hr style="height: 20px; border:none">
+                        
+                      
+                        <button type="submit" id="signup"><h3 style="color: white;">가입하기</h3></button>
+                    </form>
+
+                </div>
+            </div>
+            
+        </div>
+    </body>
+   
+    <script src="./index.js"></script>
+</html>
