@@ -1,4 +1,6 @@
-
+import React from 'react';
+import Movie from './Movie'; 
+import { movies } from './movieDummy';
 import './App.css';
 
 import Join from './Join';
@@ -8,7 +10,8 @@ function App() {
     <div className="App">
       {/* <Counter /> */}
       {/* <Modal /> */}
-      <Join />
+      {/* <Join /> */}
+      <Movie movies={movies} />
     </div>
   );
 }
