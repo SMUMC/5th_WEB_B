@@ -63,18 +63,18 @@ align-items: flex-start;
 const Container = styled.div`
 position: relative; 
 background-color: #373b69;
+height:40vh;
+gap:1rem;
 color: white;
 border-radius: 5px;
-overflow: hidden;
+overflow:hidden;
 &:hover ${HoveredBox} {
     opacity: 1;
   }
 `
 
 const MovieImage = styled.img`
-    min-width: 100%;
-    height:35vh;
-    
+    max-width: 100%;
 `
 
 const P = styled.p`
@@ -83,7 +83,7 @@ const P = styled.p`
     color: white;
     font-size: 10px;
     padding: 5px;
-    height: 130px;
+    height: 90px;
     overflow: scroll;
     overflow-x: hidden;
 `;
