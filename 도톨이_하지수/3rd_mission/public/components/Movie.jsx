@@ -1,10 +1,9 @@
-import React, { useState } from "react"; // useState 추가
+import React, { useState } from "react";
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500/";
 
 export default function Movie({ title, poster_path, vote_average, overview }) {
-  const [isHovered, setIsHovered] = useState(false); // 마우스 호버 상태를 관리하기 위한 상태 추가
-
+  const [isHovered, setIsHovered] = useState(false); 
   const handleMouseEnter = () => {
     setIsHovered(true);
   };

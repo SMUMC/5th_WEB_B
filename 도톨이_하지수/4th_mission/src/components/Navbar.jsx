@@ -1,43 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { NavbarContainer, NavbarWrap, NavbarRightWrap, NavbarItem } from './Movies.style';
+import React from "react";
+import { NavbarContainer, LogoBox, NavbarItem, LinkPage } from "./Movies.style";
 
-export default function Navbar(){
-    return(
-        <div>
-            <NavbarContainer>
-                <NavbarWrap>
-                    <NavbarRightWrap>
-                        <ul>
-                            <NavbarItem>
-                            <Link to="/">
-                                MFlix
-                            </Link>
-                            </NavbarItem>    
-                            <NavbarItem>
-                            <Link to="/NowPlaying">
-                                Now Playing
-                            </Link>
-                            </NavbarItem>
-                            <NavbarItem>
-                            <Link to="/Popular">
-                                Popular
-                            </Link>
-                            </NavbarItem>
-                            <NavbarItem>
-                            <Link  to="/TopRates">
-                                Top Rates
-                            </Link>
-                            </NavbarItem>
-                            <NavbarItem>
-                            <Link to="/Upcoming">
-                                Up Coming
-                            </Link>        
-                            </NavbarItem>
-                        </ul>
-                    </NavbarRightWrap>
-                </NavbarWrap>
-            </NavbarContainer>
-        </div>
-    );
+export default function Navbar() {
+  return (
+    <NavbarContainer>
+      <LogoBox>
+        <LinkPage to="/">
+          <h1>MFlix</h1>
+        </LinkPage>
+      </LogoBox>
+      <NavbarItem>
+        <LinkPage to="/NowPlaying">
+          <h1>Now Playing</h1>
+        </LinkPage>
+        <LinkPage to="/Popular">
+          <h1>Popular</h1>
+        </LinkPage>
+        <LinkPage to="/TopRates">
+          <h1>Top Rates</h1>
+        </LinkPage>
+        <LinkPage to="/Upcoming">
+          <h1>Up Coming</h1>
+        </LinkPage>
+      </NavbarItem>
+    </NavbarContainer>
+  );
 }
