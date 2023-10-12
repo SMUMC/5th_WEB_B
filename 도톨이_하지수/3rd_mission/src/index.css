@@ -1,0 +1,63 @@
+body{
+    background-color: #22254b;
+}
+
+.app-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.movie-container {
+    position: relative; /* 부모 요소로부터 상대적 위치 지정 */
+    width: 250px;
+    margin: 15px;
+    background-color: #373b69;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden; /* 내부 내용이 넘칠 경우 숨김 처리 */
+}
+
+
+.movie-container img{
+    max-width: 100%;
+    
+}
+
+.hover-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명한 배경색 지정 */
+    opacity: 0; /* 초기에는 숨김 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s; /* 부드러운 투명도 변화를 위한 트랜지션 */
+}
+
+.movie-container:hover .hover-box {
+    opacity: 1; /* 호버 시 투명도를 1로 변경하여 나타나게 함 */
+}
+
+.hover-box p {
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    color: white;
+    font-size: 14px;
+}
+
+.movie-info{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-info h4{ 
+    margin: 0;
+}
