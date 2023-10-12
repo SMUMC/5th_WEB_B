@@ -4,39 +4,40 @@ import { Hoverbox, MovieContainer, MovieInfo } from "./Movies.style";
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500/";
 
 export default function Movie({ title, poster_path, vote_average, overview }) {
-const [isHovered, setIsHovered] = useState(false); 
+  const [isHovered, setIsHovered] = useState(false);
 
-const handleMouseEnter = () => {
+  const handleMouseEnter = () => {
     setIsHovered(true);
-};
+  };
 
-const handleMouseLeave = () => {
+  const handleMouseLeave = () => {
     setIsHovered(false);
-};
+  };
 
-return (
+  return (
     <div>
-    <MovieContainer
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}>
+      <MovieContainer
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <img src={IMG_BASE_URL + poster_path} alt="영화포스터" />
 
-    <img src={IMG_BASE_URL + poster_path} alt="영화포스터" />
-    
-    <Hoverbox>
         {isHovered && (
-        <div>
-            <h3>{title}</h3> 
-            <p>{overview}</p>
-        </div>
+          <Hoverbox>
+            <h1>{title}</h1>
+            <p>
+              {overview
+                ? overview
+                : "TMDB에서 제공해주는 상세 줄거리 정보가 없습니다."}
+            </p>
+          </Hoverbox>
         )}
-    </Hoverbox>
 
-    <MovieInfo>
-        <h4>{title}</h4>
-        <span>{vote_average}</span>
-        
-    </MovieInfo>
-    </MovieContainer>
+        <MovieInfo>
+          <h4>{title}</h4>
+          <span>{vote_average}</span>
+        </MovieInfo>
+      </MovieContainer>
     </div>
-);
+  );
 }
