@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Movie from './movie';
 import styled from 'styled-components';
 import Loading from './Loading';
+import { Link } from 'react-router-dom';
 
 function ReuseMovie({ apiUrl }) {
   const [data, setData] = useState([]);
@@ -33,7 +34,6 @@ function ReuseMovie({ apiUrl }) {
 
     fetchData();
   }, [apiUrl]); // apiUrl과 bearerToken을 의존성 배열에 추가
-
   return (
     <Container>
       {loading ? (
@@ -43,17 +43,16 @@ function ReuseMovie({ apiUrl }) {
           {error ? (
             <p style={{ color: 'white' }}>Error: {error.message}</p>
           ) : (
-           
-              data.map((movie) => (
+            data.map((movie) => (
+              <Link to={`/movie/${movie.id}`} key={movie.id}>
                 <Movie
-                  key={movie.id}
                   title={movie.title}
                   poster_path={movie.poster_path}
                   vote_average={movie.vote_average}
                   overview={movie.overview}
                 />
-              ))
-            
+              </Link>
+            ))
           )}
         </>
       )}
@@ -76,7 +75,7 @@ margin-bottom: 70px;
   
     display: grid;
     width: 85%;
-    grid-template-columns: repeat(auto-fill, minmax(10%, 1fr)); /* 8개씩 반복, 반응형 설정 */
+    grid-template-columns: repeat(auto-fill, minmax(11%, 1fr)); /* 8개씩 반복, 반응형 설정 */
     gap: 1rem; /* 아이템 간격 조정 */
   
 }

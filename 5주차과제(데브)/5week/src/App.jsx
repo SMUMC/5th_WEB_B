@@ -13,6 +13,7 @@ import Popular from './components/popular';
 import Nowplaying from './components/nowplaying';
 import Toprated from './components/toprated';
 import Upcoming from './components/upcoming';
+import MovieInfo from './components/movieinfo';
 function App() {
   const [loading,setLoading] = useState(true); 
   useEffect(()=>{
@@ -31,6 +32,7 @@ function App() {
           <Route path="/popular" element={<Popular/>}></Route>
           <Route path="/toprated" element={<Toprated/>}></Route>
           <Route path="/upcoming" element={<Upcoming/>}></Route>
+          <Route path="/movie/:id" element={<MovieInfo />} />
         </Routes>
         <Footer/>
       </>
