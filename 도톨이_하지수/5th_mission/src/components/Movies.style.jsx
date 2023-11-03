@@ -150,3 +150,55 @@ export const Banner = styled.div`
   white-space: pre-wrap;
   padding: 50px;
 `;
+
+export const DetailContext = styled.div`
+  margin: 60px;
+
+  h1 {
+    font-size: 55px;
+  }
+
+  h2 {
+    font-size: 40px;
+    display: grid;
+    gap: 4px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+`;
+
+export const DetailImg = styled.img`
+  margin: 50px;
+`;
+
+export const DetailContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: gray;
+  margin: 1%;
+  width: 98%;
+  height: 95%;
+  border-radius: 10px;
+`;
+
+export const NotfoundContainer = styled.div`
+  text-align: center;
+
+  h1 {
+    padding: 0;
+    font-weight: bold;
+    font-size: 45px;
+  }
+  h2 {
+    text-decoration: underline;
+    font-size: 35px;
+    color: black;
+  }
+
+  h3 {
+    font-size: 30px;
+    color: red;
+  }
+`;

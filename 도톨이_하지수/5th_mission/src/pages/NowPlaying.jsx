@@ -3,6 +3,7 @@ import Movie from "../components/Movie";
 import { AppContainer } from "../components/Movies.style";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading";
+import { useNavigate } from "react-router";
 
 export default function NowPlaying() {
   const [movies, setMovies] = useState([]);
@@ -54,6 +55,7 @@ export default function NowPlaying() {
                 poster_path={item.poster_path}
                 vote_average={item.vote_average}
                 overview={item.overview}
+                movieId={item.id}
               />
             );
           })}

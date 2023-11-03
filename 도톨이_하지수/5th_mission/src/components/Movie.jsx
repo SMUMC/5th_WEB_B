@@ -14,8 +14,11 @@ export default function Movie({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/MovieDetail/${movieId}`);
+    navigate(`/MovieDetail/${title}`, {
+      state: { title, poster_path, vote_average, overview, movieId },
+    });
   };
+
   return (
     <div>
       <MovieContainer>

@@ -7,7 +7,8 @@ import Popular from "./pages/Popular";
 import TopRates from "./pages/TopRates";
 import UpComing from "./pages/UpComing";
 import Loading from "./components/Loading";
-import MovieDetail from "./pages/MovieDetailPage";
+import MovieDetail from "./pages/MovieDetail";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const loading = false;
@@ -26,7 +27,8 @@ export default function App() {
             <Route path="/Popular" element={<Popular />} />
             <Route path="/TopRates" element={<TopRates />} />
             <Route path="/UpComing" element={<UpComing />} />
-            <Route path="/MovieDetail:movieId" element={<MovieDetail />} />
+            <Route path="/*" element={<NotFound />} />
+            <Route path="/MovieDetail/:movieId" element={<MovieDetail />} />
           </Routes>
         )}
       </BrowserRouter>
