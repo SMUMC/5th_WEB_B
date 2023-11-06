@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItem, removeItem } from '../../redux/cartSlice';
 import { WrapItemContainer, ImageContainer, Button, PStyling, ContentsWrapContainer, ButtonWrapContainer, ImageWrapContainer } from './cartItem.style';
 import { ChevronDown, ChevronUp } from '../../constants/icons';
@@ -7,6 +7,7 @@ import { ChevronDown, ChevronUp } from '../../constants/icons';
 function CartItem({item}) { //구조분해 할당을 위해 {}를 써야함
     const dispatch = useDispatch();
     return (
+        
         <div>
             <WrapItemContainer>
                 <ImageWrapContainer>
