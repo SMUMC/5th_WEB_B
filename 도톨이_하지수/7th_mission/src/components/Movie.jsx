@@ -20,19 +20,17 @@ export default function Movie({
   };
 
   return (
-    <div>
-      <MovieContainer>
-        <img
-          src={IMG_BASE_URL + poster_path}
-          alt="영화포스터"
-          onClick={handleClick}
-        />
+    <MovieContainer>
+      <img
+        src={IMG_BASE_URL + poster_path}
+        alt="영화포스터"
+        onClick={handleClick}
+      />
 
-        <MovieInfo>
-          <h4>{title}</h4>
-          <span>{vote_average.toFixed(1)}</span>
-        </MovieInfo>
-      </MovieContainer>
-    </div>
+      <MovieInfo>
+        <h4>{title}</h4>
+        <span>{vote_average.toFixed(1)}</span>
+      </MovieInfo>
+    </MovieContainer>
   );
 }

@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 export const AppContainer = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  background-color: #36517a;
+  grid-template-columns: repeat(7, 1fr);
   place-items: center;
 `;
 
 export const MovieContainer = styled.div`
   position: relative;
-  width: 250px;
+  width: 230px;
   margin: 15px;
   background-color: rgb(3, 37, 65);
   border-radius: 6px;
@@ -79,6 +80,7 @@ export const NavbarContainer = styled.div`
   height: 128px;
   width: 100%;
   display: flex;
+  position: relative;
   justify-content: space-around;
   align-items: center;
 `;
@@ -147,7 +149,7 @@ export const Banner = styled.div`
   font-size: 30px;
   width: 100%;
   height: 130px;
-  padding: 25px;
+  margin: 0;
 `;
 
 export const DetailContext = styled.div`
@@ -257,12 +259,14 @@ export const MovieBox = styled.div`
 export const HomeContainer = styled.div`
   display: block;
   background-color: #36517a;
-  padding: 150px;
   height: 100%;
   width: 100%;
 `;
 
-export const HomeMovieDiv = styled.div``;
+export const HomeMovieDiv = styled.div`
+  height: 100%;
+  width: 100%;
+`;
 
 export const HomeMovieContainer = styled.div`
   position: relative;

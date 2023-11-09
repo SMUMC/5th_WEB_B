@@ -42,7 +42,7 @@ export default function NowPlaying() {
   }, []);
 
   return (
-    <HomeContainer>
+    <AppContainer>
       {loading ? (
         <Loading />
       ) : (
@@ -60,6 +60,6 @@ export default function NowPlaying() {
           })}
         </AppContainer>
       )}
-    </HomeContainer>
+    </AppContainer>
   );
 }

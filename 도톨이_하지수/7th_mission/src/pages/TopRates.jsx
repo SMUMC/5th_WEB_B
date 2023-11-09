@@ -1,7 +1,7 @@
 import React from "react";
 import Movie from "../components/Movie";
 import { useState, useEffect } from "react";
-import { AppContainer, HomeContainer } from "../components/Movies.style";
+import { AppContainer } from "../components/Movies.style";
 import Loading from "../components/Loading";
 
 export default function TopRates() {
@@ -41,7 +41,7 @@ export default function TopRates() {
     fetchData();
   }, []);
   return (
-    <HomeContainer>
+    <AppContainer>
       {loading ? (
         <Loading />
       ) : (
@@ -59,6 +59,6 @@ export default function TopRates() {
           })}
         </AppContainer>
       )}
-    </HomeContainer>
+    </AppContainer>
   );
 }

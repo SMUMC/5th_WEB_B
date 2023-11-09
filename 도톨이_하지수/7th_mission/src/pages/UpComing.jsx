@@ -1,7 +1,7 @@
 import React from "react";
 import Movie from "../components/Movie";
 import { useState, useEffect } from "react";
-import { AppContainer, HomeContainer } from "../components/Movies.style";
+import { AppContainer } from "../components/Movies.style";
 import Loading from "../components/Loading";
 
 export default function UpComing() {
@@ -42,7 +42,7 @@ export default function UpComing() {
   }, []);
 
   return (
-    <HomeContainer>
+    <AppContainer>
       {loading ? (
         <Loading />
       ) : (
@@ -60,6 +60,6 @@ export default function UpComing() {
           })}
         </AppContainer>
       )}
-    </HomeContainer>
+    </AppContainer>
   );
 }

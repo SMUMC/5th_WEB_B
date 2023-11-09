@@ -1,6 +1,6 @@
 import React from "react";
 import Movie from "../components/Movie";
-import { AppContainer, HomeContainer } from "../components/Movies.style";
+import { AppContainer } from "../components/Movies.style";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading";
 
@@ -42,7 +42,7 @@ export default function Popular() {
   }, []);
 
   return (
-    <HomeContainer>
+    <AppContainer>
       {loading ? (
         <Loading />
       ) : (
@@ -60,6 +60,6 @@ export default function Popular() {
           })}
         </AppContainer>
       )}
-    </HomeContainer>
+    </AppContainer>
   );
 }
