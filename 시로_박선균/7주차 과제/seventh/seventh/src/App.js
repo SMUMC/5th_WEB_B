@@ -17,7 +17,7 @@ const AppRoutes = () => (
     <Nav />
     <Routes>
       <Route path='/' element={<SearchPage/>} />
-      <Route path="/register" element ={<RegisterPage/>} />
+      <Route path="/register" element={<RegisterPage/>} />
     </Routes>
   </div>
 );
