@@ -5,7 +5,6 @@ import {
   FindContainer,
   StyledInput,
   MovieBox,
-  FindButton,
   StyledLabel,
   FindDiv,
 } from "./Movies.style";
@@ -13,12 +12,22 @@ import {
 export default function Search() {
   const [find, setFind] = useState([]);
   const [search, setsearch] = useState("");
+
+  useEffect(() => {
+    let MovieBox = document.getElementById("MovieBox");
+    if (search.trim() === "") {
+      MovieBox.style.display = "none";
+    } else {
+      MovieBox.style.display = "grid";
+    }
+  });
+
   const searchValue = (event) => {
     setsearch(event.target.value);
     console.log(search);
   };
 
-  const findValue = useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const result = await fetch(
@@ -52,8 +61,7 @@ export default function Search() {
       <FindContainer>
         <StyledLabel> 📽 Find your movies 📽</StyledLabel>
         <StyledInput type="text" onChange={searchValue} />
-        <FindButton onClick={findValue}> 찾기 </FindButton>
-        <MovieBox>
+        <MovieBox id="MovieBox">
           {find.map((item) => {
             return (
               <HomeMovie

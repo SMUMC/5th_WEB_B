@@ -216,16 +216,6 @@ export const FindDiv = styled.div`
 
 export const FindContainer = styled.div``;
 
-export const FindButton = styled.button`
-  width: 180px;
-  height: 50px;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-  margin-left: 10px;
-`;
-
 export const StyledLabel = styled.label`
   display: block;
   font-weight: bold;
@@ -241,7 +231,7 @@ export const StyledInput = styled.input`
 `;
 
 export const MovieBox = styled.div`
-  display: grid;
+  display: none;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
