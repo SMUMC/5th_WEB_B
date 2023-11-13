@@ -4,39 +4,44 @@ import styled from "styled-components";
 import cartItems from "../lib/cartItems";
 import Music from "./musicList";
 import { reset } from "../redux/user";
+
 export default function CartList() {
   const dispatch = useDispatch();
-  let total = useSelector((state) => state.user.total);
+  const cartItems = useSelector((state) => state.user.cartItems);
+  const total = useSelector((state) => state.user.total);
+
   const handleReset = () => {
     dispatch(reset()); // Dispatch the reset action to reset cart items and total
   };
-    return (
-      <Container>
-        {cartItems.map((item, index) => {
-          total+=(item.price-'0')*item.amount
-          return (
-            <Music
-              key={index}
-              index={index}
-              img={item.img}
-              title={item.title}
-              singer={item.singer}
-              price={item.price}
-            />
-          );
-        })}
-            <TotalCost>
-                <h6>총 가격</h6>
-                <h6> ₩{total}</h6>
-            </TotalCost>
-            <Footer>
-              <Btn onClick={handleReset} >
-                  <H3>장바구니 초기화</H3>
-              </Btn>
-            </Footer>
-      </Container>
-    );
-  }
+
+  const calculateTotal = () => {
+    return cartItems.reduce((acc, item) => acc + (item.price - '0') * item.amount, 0);
+  };
+
+  return (
+    <Container>
+      {cartItems.map((item, index) => (
+        <Music
+          key={index}
+          index={index}
+          img={item.img}
+          title={item.title}
+          singer={item.singer}
+          price={item.price}
+        />
+      ))}
+      <TotalCost>
+        <h6>총 가격</h6>
+        <h6>₩{calculateTotal()}</h6> {/* Calculate the total based on cartItems */}
+      </TotalCost>
+      <Footer>
+        <Btn onClick={handleReset}>
+          <H3>장바구니 초기화</H3>
+        </Btn>
+      </Footer>
+    </Container>
+  );
+}
   
   
   const TotalCost = styled.div`

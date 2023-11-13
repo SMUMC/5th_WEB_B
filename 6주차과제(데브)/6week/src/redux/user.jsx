@@ -22,8 +22,8 @@ const userSlice = createSlice({
       reset: (state) => {
         state.cartItems.forEach((item) => {
           item.amount = 0;
-          state.total-=item.price -'0'
         });
+        state.total = 0; // state.total을 0으로 리셋
       },
   },
 });

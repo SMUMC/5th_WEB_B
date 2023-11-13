@@ -14,6 +14,8 @@ import Nowplaying from './components/nowplaying';
 import Toprated from './components/toprated';
 import Upcoming from './components/upcoming';
 import MovieInfo from './components/movieinfo';
+import Sign_Up from './sign-up/main_page';
+import Search from './components/search';
 function App() {
   const [loading,setLoading] = useState(true); 
   useEffect(()=>{
@@ -33,6 +35,8 @@ function App() {
           <Route path="/toprated" element={<Toprated/>}></Route>
           <Route path="/upcoming" element={<Upcoming/>}></Route>
           <Route path="/movie/:id" element={<MovieInfo />} />
+          <Route path="/sign-up" element={<Sign_Up />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
         <Footer/>
       </>

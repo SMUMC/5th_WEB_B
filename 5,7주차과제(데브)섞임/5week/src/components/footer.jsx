@@ -16,7 +16,7 @@ function Footer(){
 const ContainingFooter= styled.div`
     width : 100%;
     height: 50px;
-    position: fixed;
+    position: relative;
     text-align: center;
     bottom: 0px;
     background-color: black;

@@ -11,8 +11,12 @@ function Header(){
                    <StyledTitle >MFlix</StyledTitle>  
                 </StyledLink>
                 <HeaderMenu>
-                    <h5 onClick={() => setIsLogin(!isLogin)}>{isLogin ? "로그아웃" : "로그인"}</h5> {/* 이번 미션기준으로 h5로했습니다(원래 이렇게하면 안됩니다! ㅋㅋ) */}
-                    
+                    <StyledLink to="/search" style={{textDecoration:"none"}}>
+                        <StyledMenu>Search</StyledMenu>  
+                    </StyledLink>
+                    <StyledLink to="/sign-up" style={{textDecoration:"none"}}>
+                        <StyledMenu>회원가입</StyledMenu>  
+                    </StyledLink>
                     <StyledLink to="/popular" style={{textDecoration:"none"}}>
                         <StyledMenu>Popular</StyledMenu>  
                     </StyledLink>
