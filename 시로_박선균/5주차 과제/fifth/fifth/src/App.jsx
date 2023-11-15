@@ -73,6 +73,15 @@ const AppRoutes = () => (
       <Route path='/upcoming' element={<App api_menu="upcoming" />} />
       <Route path = '/movie/:title' element={<MovieDetail/>}/>
       <Route path="/*" element={<PageNotFound/>}/>
+      {/* <Routes>
+      <Route path='/' element={<App api_menu="top_rated" />} />
+      <Route path='/popular' element={<App api_menu="popular" />} />
+      <Route path='/nowplaying' element={<App api_menu="now_playing" />} />
+      <Route path='/top-rated' element={<App api_menu="top_rated" />} />
+      <Route path='/upcoming' element={<App api_menu="upcoming" />} />
+      <Route path = '/movie/:title' element={<MovieDetail/>}/>
+      <Route path="/*" element={<PageNotFound/>}/>
+    </Routes> */}
     </Routes>
     <Footer />
   </div>
