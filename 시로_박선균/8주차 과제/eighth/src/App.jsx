@@ -14,6 +14,7 @@ import MainPage from './components/movie/MainPage';
 import RegisterPage from './components/register/registerPage';
 import SearchPage from './components/search/searchPage';
 import WeatherPage from './components/weather/weatherPage';
+import LoginPage from './components/login/login';
 
 function App(props) {
   return (
@@ -34,6 +35,7 @@ const AppRoutes = () => (
       <Route path = '/movie/:id' element={<MovieDetail/>}/>
       <Route path="/*" element={<PageNotFound/>}/>
       <Route path="/weather" element = {<WeatherPage/>}/>
+      <Route path="/login" element = {<LoginPage/>}/>
     </Routes>
     <Footer />
   </div>
