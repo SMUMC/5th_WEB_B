@@ -8,7 +8,7 @@ import {
   LinkDiv,
 } from "../style/SignUp.style";
 import { Link, useNavigate } from "react-router-dom";
-import { loginData, logoutAction } from "../redux/userSlice";
+import { loginData } from "../redux/userSlice";
 import axios from "axios";
 
 export default function SignUp() {
@@ -175,9 +175,8 @@ export default function SignUp() {
 
       await axios.post("http://localhost:8080/auth/signup", body);
       alert("회원가입 성공");
-      loginData(body);
-      // logoutAction(body);
       navigate("/Login");
+      loginData(body);
     } catch (error) {
       if (error.response && error.response.status === 409) {
         alert("이미 존재하는 아이디 입니다.");

@@ -5,7 +5,7 @@ export const AppContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: #36517a;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   justify-content: space-around;
 `;
 
