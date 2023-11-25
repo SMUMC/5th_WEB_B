@@ -1,0 +1,33 @@
+import styled from "styled-components";
+
+export const smallBackground = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 30vh;
+  color: white;
+  background-color: gray;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+export const Background = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LoadingText = styled.div`
+  font: 1rem "Noto Sans KR";
+  text-align: center;
+`;
