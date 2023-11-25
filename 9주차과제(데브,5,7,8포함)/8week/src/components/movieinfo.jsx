@@ -81,7 +81,7 @@ const Container = styled.div`
     imageurl
       ? `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(${imageurl})`
       : ''};
-  background-size: 100vw 100%;
+  background-size: 100% 100%;
 `
 const TextContainer = styled.div`
     display: flex;

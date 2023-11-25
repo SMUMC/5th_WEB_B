@@ -1,5 +1,10 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+
+import { Link , useNavigate} from "react-router-dom";
 import styled from "styled-components";
+import {  userRequest, userSuccess } from "../mission1-frontcode/redux/user";
 
 const initialState = {
   value: "",
@@ -8,15 +13,24 @@ const initialState = {
 };
 
 export default function Sign_Up() {
+  const dispatch = useDispatch();
+
+  dispatch(userRequest());
+  const navigate = useNavigate();
   const [name, setName] = useState(initialState);
+  const [id, setId] = useState(initialState);
   const [email, setEmail] = useState(initialState);
   const [age, setAge] = useState(initialState);
   const [password, setPassword] = useState(initialState);
   const [passwordConfirm, setPasswordConfirm] = useState(initialState);
 
   const isFormValid =
-    name.isValid && email.isValid && age.isValid && password.isValid && passwordConfirm.isValid;
-
+  !name.error &&
+  !id.error &&
+  !email.error &&
+  !age.error &&
+  !password.error &&
+  !passwordConfirm.error;
   const handleInputChange = (setter, value, validationFunction) => {
     const error = validationFunction(value);
     setter({ value, error, isValid: !error });
@@ -25,6 +39,13 @@ export default function Sign_Up() {
   const validateName = (value) => {
     const regExp = /^[a-zA-Z가-힣]*$/;
     if (value.trim() === "") return "반드시 이름을 입력해주세요.";
+    if (!regExp.test(value)) return "문자로 입력해주세요";
+    return "";
+  };
+
+  const validateId = (value) => {
+    const regExp = /^[A-za-z]{5,15}/g;
+    if (value.trim() === "") return "반드시 아이디를 입력해주세요.";
     if (!regExp.test(value)) return "문자로 입력해주세요";
     return "";
   };
@@ -60,10 +81,48 @@ export default function Sign_Up() {
     return "";
   };
   const validData = () => {
-    if (name.isValid && email.isValid && age.isValid && password.isValid && passwordConfirm.isValid) {
-      console.log("폼 데이터:", { name: name.value, age: age.value, email: email.value, pw: password.value, pwCorrect: passwordConfirm.value });
-      alert("회원가입 완료");
-    }
+        axios({
+          method: "POST",
+          url: "http://localhost:8080/auth/signup",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: {
+            name: name.value,
+            email: email.value,
+            age: age.value,
+            username: id.value,
+            password: password.value,
+            passwordCheck: passwordConfirm.value,
+          },
+        })
+        .then((response) => {
+          dispatch(userSuccess(response.data));
+          alert("회원가입이 정상적으로 완료되었습니다!!")
+          console.log("서버 응답:", response.data);
+          navigate('/login');
+        })
+      
+  
+        .catch((error) => {
+          console.log(error)
+          if (error.response.status === 400) {
+            alert(error.response.data.message);
+          } else if (error.response.status === 401) {
+            alert(error.response.data.message);
+          } else if (error.response.status === 402) {
+            alert(error.response.data.message);
+          } else if (error.response.status === 404) {
+            alert(error.response.data.message);
+          } else if (error.response.status === 409) {
+            alert(error.response.data.message);
+          }
+           
+          else {
+            dispatch(userFailure(error.message));
+            alert("회원가입에 실패하였습니다.");
+          }});
+    
   };
   return (
     <Container>
@@ -76,6 +135,14 @@ export default function Sign_Up() {
           onChange={(e) => handleInputChange(setName, e.target.value, validateName)}
         />
         <Mes>{name.error}</Mes>
+
+        <Input
+          type="text"
+          placeholder="아이디"
+          value={id.value}
+          onChange={(e) => handleInputChange(setId, e.target.value, validateId)}
+        />
+        <Mes>{id.error}</Mes>
 
         <Input
           type="text"
@@ -115,6 +182,12 @@ export default function Sign_Up() {
         <Btn disabled={!isFormValid} onClick={validData}>
           가입하기
         </Btn>
+        <LoginOps>
+          <Span>이미 아이디가 있으신가요?</Span>
+          <StyledLink to="/login" style={{textDecoration:"none"}}>
+            <Span >로그인 하러가기</Span>  
+          </StyledLink>
+        </LoginOps>
       </InputContainer>
     </Container>
   );
@@ -123,8 +196,10 @@ export default function Sign_Up() {
 const Input = styled.input`
   width: 100%;
   height: 40px;
-  background-color: white;
+  background-color: transparent;
   border-radius: 15px;
+  color: white;
+  border: 1px solid white;
 `;
 
 const InputContainer = styled.div`
@@ -157,3 +232,16 @@ const Btn = styled.button`
 const Mes = styled.div`
   color: red;
 `;
+const Span = styled.span`
+  font-size: 14px;
+  color: white;
+`
+const LoginOps = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import Movie from "./movie";
 import { Link } from "react-router-dom";
-
+import Loading from "./Loading";
 
 export default function Search() {
   const [search, setSearch] = useState("");
@@ -58,7 +58,7 @@ export default function Search() {
           onChange={handleSearchChange}
         />
         {loading ? (
-        <p>ㄱㄷ</p>
+          <></>
       ) : (
         <MovieBox>
           {movies.map((movie) => (
@@ -79,6 +79,7 @@ export default function Search() {
     </FindDiv>
   );
 }
+
 const FindDiv = styled.div`
   background-color: transparent;
   padding: 20px;

@@ -103,12 +103,11 @@ const ActorImage = styled.img`
 `;
 const Li = styled.li`
 display: grid;
-grid-template-columns: repeat(8, 1fr);
 display: flex;
 flex-direction: column;
 justify-content: center;
-margin-right: 50px;
 align-items: center;
+padding-right: 20px;
 `
 const Ul = styled.ul`
     display: flex;;
@@ -116,8 +115,7 @@ const Ul = styled.ul`
     margin: 0px;
     color: white;
     font-size: 10px;
-    padding: 5px;
-    width: 100vw;
+    width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
   &::-webkit-scrollbar {

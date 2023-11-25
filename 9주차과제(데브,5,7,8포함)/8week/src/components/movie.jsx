@@ -93,7 +93,7 @@ overflow:hidden;
 `
 
 const MovieImage = styled.img`
-    max-width: 100%;
+    width: 100%;
     height: 80%;
 `
 
