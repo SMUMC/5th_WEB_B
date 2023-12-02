@@ -1,0 +1,95 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "A",
+      "avatarColor": "red",
+      "title": "Shrimp and Chorizo Paella",
+      "subheader": "September 14, 2016",
+      "image": "/images/paella.jpg",
+      "content": "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
+    },
+    {
+      "id": 2,
+      "name": "P",
+      "avatarColor": "blue",
+      "title": "Chicken Alfredo",
+      "subheader": "October 5, 2017",
+      "image": "/images/alfredo.jpg",
+      "content": "Creamy chicken Alfredo pasta for a delightful dinner. Cook fettuccine according to package instructions. In a large skillet, melt butter and add garlic. Cook until fragrant."
+    },
+    {
+      "id": 3,
+      "name": "D",
+      "avatarColor": "green",
+      "title": "Vegetarian Stir-Fry",
+      "subheader": "March 21, 2018",
+      "image": "/images/vegan.jpg",
+      "content": "Healthy and colorful vegetable stir-fry. A quick and tasty way to get your veggies in. Use your favorite vegetables and tofu or tempeh for a vegetarian option."
+    },
+
+    {
+      "id": 4,
+      "name": "Q",
+      "avatarColor": "orange",
+      "title": "Mango Salsa Chicken",
+      "subheader": "June 8, 2019",
+      "image": "/images/alfredo.jpg",
+      "content": "A tropical twist on classic grilled chicken. Juicy mango salsa adds sweetness and flavor to perfectly cooked chicken breasts. Great for summer barbecues."
+    },
+    {
+      "id": 5,
+      "name": "Y",
+      "avatarColor": "purple",
+      "title": "Caprese Salad",
+      "subheader": "December 12, 2020",
+      "image": "/images/vegan.jpg",
+      "content": "Classic Caprese salad with fresh tomatoes, mozzarella, and basil. Drizzle with balsamic glaze for a simple and elegant appetizer."
+    },
+    {
+      "id": 6,
+      "name": "U",
+      "avatarColor": "teal",
+      "title": "Spaghetti Bolognese",
+      "subheader": "May 2, 2020",
+      "image": "/images/paella.jpg",
+      "content": "Hearty and flavorful spaghetti Bolognese. Ground beef cooked in a rich tomato sauce, served over al dente spaghetti. Comfort food at its best."
+    },
+    {
+      "id": 7,
+      "name": "V",
+      "avatarColor": "pink",
+      "title": "Avocado Toast",
+      "subheader": "August 18, 2020",
+      "image": "/images/vegan.jpg",
+      "content": "Simple and satisfying avocado toast. Creamy mashed avocado on toasted bread with a sprinkle of salt and red pepper flakes. Perfect for a quick and healthy breakfast."
+    },
+    {
+      "id": 8,
+      "name": "J",
+      "avatarColor": "brown",
+      "title": "Teriyaki Salmon",
+      "subheader": "April 5, 2023",
+      "image": "/images/alfredo.jpg",
+      "content": "Flaky and flavorful teriyaki-glazed salmon. A delicious and healthy seafood dish that's easy to prepare. Serve with steamed rice and vegetables."
+    },
+    {
+      "id": 9,
+      "name": "M",
+      "avatarColor": "lime",
+      "title": "Caesar Salad",
+      "subheader": "July 21, 2023",
+      "image": "/images/vegan.jpg",
+      "content": "Classic Caesar salad with crisp romaine lettuce, garlic croutons, and parmesan cheese. Tossed in a creamy Caesar dressing for a refreshing side or light meal."
+    },
+    {
+      "id": 10,
+      "name": "S",
+      "avatarColor": "grey",
+      "title": "Margherita Pizza",
+      "subheader": "January 9, 2023",
+      "image": "/images/paella.jpg",
+      "content": "Classic Margherita pizza with fresh tomato slices, mozzarella cheese, and basil leaves. Baked to perfection for a simple yet delicious homemade pizza."
+    }
+  ]
+}
