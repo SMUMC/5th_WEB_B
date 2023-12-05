@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "title": "첫 번째 게시물",
+      "content": "이것은 첫 번째 게시물의 내용입니다.",
+      "image": "data:image/jpeg;base64,..."
+    },
+    {
+      "id": 2,
+      "title": "두 번째 게시물",
+      "content": "이것은 두 번째 게시물의 내용입니다.",
+      "image": null
+    }
+  ]
